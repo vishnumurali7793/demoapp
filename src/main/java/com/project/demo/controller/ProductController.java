@@ -1,11 +1,9 @@
 package com.project.demo.controller;
 
-import java.util.Collections;
 import java.util.HashMap;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -49,12 +47,7 @@ public class ProductController {
 			responseDTO.setMessage("success");
 			responseDTO.setStatusCode(1l);
 			if (httpHeaders.containsKey("data-source") && httpHeaders.get("data-source").contains("db")) {
-				Page<Product> pageProduct = productService.findAllProducts(page);
-				if (pageProduct != null && !pageProduct.getContent().isEmpty()) {
-					responseDTO.setData(pageProduct.getContent());
-				} else {
-					responseDTO.setData(Collections.emptyList());
-				}
+				responseDTO.setData(productService.findAllProducts(page));
 			} else {
 				responseDTO.setData(productService.getAllProducts());
 			}

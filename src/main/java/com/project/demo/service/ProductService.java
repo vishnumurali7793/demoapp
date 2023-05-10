@@ -1,9 +1,11 @@
 package com.project.demo.service;
 
 
-import org.springframework.data.domain.Page;
+import java.util.List;
+
 import org.springframework.data.domain.Pageable;
 
+import com.project.demo.dto.ProductDTO;
 import com.project.demo.entities.Product;
 
 public interface ProductService {
@@ -20,7 +22,7 @@ public interface ProductService {
 
 	Product getProductById(Long id);
 
-	Page<Product> findAllProducts(Pageable page);
+	List<ProductDTO> findAllProducts(Pageable page);
 
 	Object getTotalRevenue();
 

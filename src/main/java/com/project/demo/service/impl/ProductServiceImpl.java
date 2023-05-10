@@ -1,5 +1,7 @@
 package com.project.demo.service.impl;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.BeanUtils;
@@ -8,6 +10,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import com.project.demo.dto.ProductDTO;
 import com.project.demo.entities.Product;
 import com.project.demo.entities.Sale;
 import com.project.demo.entities.repository.ProductRepository;
@@ -84,8 +87,17 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public Page<Product> findAllProducts(Pageable page) {
-		return productRepository.findAll(page);
+	public List<ProductDTO> findAllProducts(Pageable page) {
+		List<ProductDTO> productDTOs = new ArrayList<>();
+		Page<Product> pageProduct = productRepository.findAll(page);
+		if (pageProduct != null && !pageProduct.getContent().isEmpty()) {
+			for (Product product : pageProduct.getContent()) {
+				productDTOs.add(new ProductDTO(product.getId(), product.getName(), product.getDescription(),
+						product.getPrice(), product.getQuantity(), null));
+			}
+			return productDTOs;
+		}
+		return Collections.emptyList();
 	}
 
 	@Override
