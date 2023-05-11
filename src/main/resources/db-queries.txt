@@ -1,0 +1,48 @@
+CREATE TABLE `product` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  `description` varchar(155) DEFAULT NULL,
+  `price` decimal(13,2) NOT NULL DEFAULT 0.00,
+  `quantity` decimal(13,2) DEFAULT 0.00,
+  `entry_date` datetime DEFAULT current_timestamp(),
+  `last_updated_on` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE `sales` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `product_id` int(11) NOT NULL,
+  `quantity` decimal(13,2) NOT NULL,
+  `sale_date` datetime DEFAULT NULL,
+  `entry_date` datetime DEFAULT current_timestamp(),
+  `last_updated_on` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`),
+  KEY `fk_product_id_idx` (`product_id`),
+  CONSTRAINT `fk_product_id` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`) ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `demo`.`product` (`id`,`name`,`description`,`price`,`quantity`,`entry_date`,`last_updated_on`) VALUES (1,'Plant Hanger For Home','Boho Decor Plant Hanger For Home Wall Decoration Macrame Wall Hanging Shelf',41.00,131.00,'2023-05-11 01:13:55','2023-05-11 01:13:55');
+INSERT INTO `demo`.`product` (`id`,`name`,`description`,`price`,`quantity`,`entry_date`,`last_updated_on`) VALUES (2,'3D Embellishment Art Lamp','3D led lamp sticker Wall sticker 3d wall art light on/off button  cell operated (included)',20.00,54.00,'2023-05-11 01:13:55','2023-05-11 01:13:55');
+INSERT INTO `demo`.`product` (`id`,`name`,`description`,`price`,`quantity`,`entry_date`,`last_updated_on`) VALUES (3,'Handcraft Chinese style','Handcraft Chinese style art luxury palace hotel villa mansion home decor ceramic vase with brass fruit plate',60.00,7.00,'2023-05-11 01:13:55','2023-05-11 01:13:55');
+INSERT INTO `demo`.`product` (`id`,`name`,`description`,`price`,`quantity`,`entry_date`,`last_updated_on`) VALUES (4,'Key Holder','Attractive DesignMetallic materialFour key hooksReliable & DurablePremium Quality',30.00,54.00,'2023-05-11 01:13:55','2023-05-11 01:13:55');
+INSERT INTO `demo`.`product` (`id`,`name`,`description`,`price`,`quantity`,`entry_date`,`last_updated_on`) VALUES (5,'iPhone 9','An apple mobile which is nothing like apple',549.00,94.00,'2023-05-11 01:13:55','2023-05-11 01:13:55');
+INSERT INTO `demo`.`product` (`id`,`name`,`description`,`price`,`quantity`,`entry_date`,`last_updated_on`) VALUES (6,'iPhone X','SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...',899.00,34.00,'2023-05-11 01:13:55','2023-05-11 01:13:55');
+INSERT INTO `demo`.`product` (`id`,`name`,`description`,`price`,`quantity`,`entry_date`,`last_updated_on`) VALUES (7,'Samsung Universe 9','Samsung\'s new variant which goes beyond Galaxy to the Universe',1249.00,36.00,'2023-05-11 01:13:55','2023-05-11 01:13:55');
+INSERT INTO `demo`.`product` (`id`,`name`,`description`,`price`,`quantity`,`entry_date`,`last_updated_on`) VALUES (8,'OPPOF19','OPPO F19 is officially announced on April 2021.',280.00,123.00,'2023-05-11 01:13:55','2023-05-11 01:13:55');
+INSERT INTO `demo`.`product` (`id`,`name`,`description`,`price`,`quantity`,`entry_date`,`last_updated_on`) VALUES (9,'Huawei P30','Huawei’s re-badged P30 Pro New Edition was officially unveiled yesterday in Germany and now the device has made its way to the UK.',499.00,32.00,'2023-05-11 01:13:55','2023-05-11 01:13:55');
+INSERT INTO `demo`.`product` (`id`,`name`,`description`,`price`,`quantity`,`entry_date`,`last_updated_on`) VALUES (10,'MacBook Pro','MacBook Pro 2021 with mini-LED display may launch between September, November',1749.00,83.00,'2023-05-11 01:13:55','2023-05-11 01:13:55');
+INSERT INTO `demo`.`product` (`id`,`name`,`description`,`price`,`quantity`,`entry_date`,`last_updated_on`) VALUES (11,'Samsung Galaxy Book','Samsung Galaxy Book S (2020) Laptop With Intel Lakefield Chip, 8GB of RAM Launched',1499.00,50.00,'2023-05-11 01:13:55','2023-05-11 01:13:55');
+INSERT INTO `demo`.`product` (`id`,`name`,`description`,`price`,`quantity`,`entry_date`,`last_updated_on`) VALUES (12,'Microsoft Surface Laptop 4','Style and speed. Stand out on HD video calls backed by Studio Mics. Capture ideas on the vibrant touchscreen.',1499.00,68.00,'2023-05-11 01:13:55','2023-05-11 01:13:55');
+
+INSERT INTO `demo`.`sales` (`product_id`, `quantity`, `sale_date`) VALUES ('1', '12', NOW());
+INSERT INTO `demo`.`sales` (`product_id`, `quantity`, `sale_date`) VALUES ('3', '7', NOW());
+INSERT INTO `demo`.`sales` (`product_id`, `quantity`, `sale_date`) VALUES ('7', '8', NOW());
+INSERT INTO `demo`.`sales` (`product_id`, `quantity`, `sale_date`) VALUES ('2', '32', NOW());
+INSERT INTO `demo`.`sales` (`product_id`, `quantity`, `sale_date`) VALUES ('1', '4', NOW());
+INSERT INTO `demo`.`sales` (`product_id`, `quantity`, `sale_date`) VALUES ('10', '4', NOW());
+INSERT INTO `demo`.`sales` (`product_id`, `quantity`, `sale_date`) VALUES ('8', '45', NOW());
+INSERT INTO `demo`.`sales` (`product_id`, `quantity`, `sale_date`) VALUES ('11', '21', NOW());
+INSERT INTO `demo`.`sales` (`product_id`, `quantity`, `sale_date`) VALUES ('4', '10', NOW());
+INSERT INTO `demo`.`sales` (`product_id`, `quantity`, `sale_date`) VALUES ('9', '1', NOW());

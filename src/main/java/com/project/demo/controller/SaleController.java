@@ -18,7 +18,7 @@ import com.project.demo.service.ProductService;
 import com.project.demo.service.SaleService;
 
 @RestController
-@RequestMapping("/v1.0")
+@RequestMapping("/api/v1.0")
 public class SaleController {
 	@Autowired
 	SaleService saleService;

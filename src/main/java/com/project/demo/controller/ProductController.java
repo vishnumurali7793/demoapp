@@ -25,7 +25,7 @@ import com.project.demo.service.ProductService;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
-@RequestMapping("/v1.0")
+@RequestMapping("/api/v1.0")
 @Slf4j
 public class ProductController {
 	@Autowired
