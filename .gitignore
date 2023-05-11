@@ -1,0 +1,121 @@
+### ECLIPSE
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+
+### EXTERNAL TOOL BUILDERS
+.externalToolBuilders/
+
+### LOCALLY STORED "ECLIPSE LAUNCH CONFIGURATIONS"
+*.launch
+
+### PYDEV SPECIFIC (PYTHON IDE FOR ECLIPSE)
+*.pydevproject
+
+### CDT-SPECIFIC (C/C++ DEVELOPMENT TOOLING)
+.cproject
+
+### CDT- AUTOTOOLS
+.autotools
+
+### JAVA ANNOTATION PROCESSOR (APT)
+.factorypath
+
+### PDT-SPECIFIC (PHP DEVELOPMENT TOOLS)
+.buildpath
+
+### SBTECLIPSE PLUGIN
+.target
+
+### TERN PLUGIN
+.tern-project
+
+### TEXLIPSE PLUGIN
+.texlipse
+
+### STS (SPRING TOOL SUITE)
+.springBeans
+.sts4-cache/
+
+### CODE RECOMMENDERS
+.recommenders/
+
+### ANNOTATION PROCESSING
+.apt_generated/
+
+### SCALA IDE SPECIFIC (SCALA & JAVA DEVELOPMENT FOR ECLIPSE)
+.cache-main
+.scala_dependencies
+.worksheet
+
+### ECLIPSE CORE
+.project
+
+### JDT-SPECIFIC (ECLIPSE JAVA DEVELOPMENT TOOLS)
+.classpath
+
+### ANNOTATION PROCESSING
+.apt_generated
+
+### JAVA
+### COMPILED CLASS FILE
+*/classes/
+*.class
+
+### LOG FILE
+*.log
+
+### BLUEJ FILES
+*.ctxt
+
+### MOBILE TOOLS FOR JAVA (J2ME)
+.mtj.tmp/
+
+### PACKAGE FILES
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# VIRTUAL MACHINE CRASH LOGS
+hs_err_pid*
+
+### JAVA-WEB
+target/
+
+### MAVEN
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+### VISUALSTUDIOCODE
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.vscode/launch.json
+.vscode/settings.json
+
+### VISUALSTUDIOCODE PATCH
+.history
+
+### MACBOOK
+.DS_Store
+
