@@ -1,4 +1,4 @@
-#DemoApp
+# DemoApp
 
 Demo REST Application developed as part of coding test for Spark Support Infotech (P) Ltd.
 
@@ -8,7 +8,7 @@ http://localhost:8081/demoapp/api/v1.0/
 
 # Endpoints
 
-	## Product
+### Product
 
 1. GET: /product -> Get All Products
 
@@ -20,13 +20,13 @@ http://localhost:8081/demoapp/api/v1.0/
 
 5. DELETE: /product/{id} -> Delete Specific Product
 
-	## Revenue
+### Revenue 
 
 1. GET: /revenue -> Get Total Revenue
 
 2. GET: /revenue/product/{id} -> Get Revenue Of A Specific Product
 
-	## Sale
+### Sale
 
 1. GET: /sale -> Get All Sale
 
