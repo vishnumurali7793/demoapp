@@ -54,8 +54,8 @@ public class SaleServiceImpl implements SaleService {
 			if (sale.getId().equals(s.getId())) {
 				BeanUtils.copyProperties(sale, s);
 				s.setProduct(this.findProductFromSale(s));
+				return s;
 			}
-			return s;
 		}
 		return null;
 	}
